@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_camera"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/ocr_btn_camera"
+            android:textAppearance="@style/TextAppearance.Namuthon.Title"
+            android:textSize="16sp"
+            android:backgroundTint="@color/main_color"
+            app:layout_constraintEnd_toEndOf="@+id/btn_ocr"
+            app:layout_constraintStart_toStartOf="@+id/btn_ocr"
+            app:layout_constraintTop_toBottomOf="@+id/img_camera" />
+
+        <Button
+            android:id="@+id/btn_ocr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ocr_btn_ocr"
+            android:textAppearance="@style/TextAppearance.Namuthon.Title"
+            android:textSize="16sp"
+            android:backgroundTint="@color/main_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
+
+        <TextView
+            android:id="@+id/tv_ocr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp"
+            android:background="#fff"
+            android:text="@string/ocr_btn_ocr"
+            android:textAppearance="@style/TextAppearance.Namuthon.Title"
+            android:textColor="@color/main_color"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_ocr"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="@+id/btn_camera"
+            app:layout_constraintTop_toBottomOf="@+id/btn_ocr"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
