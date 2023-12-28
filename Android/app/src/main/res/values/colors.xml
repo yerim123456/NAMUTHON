@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#1F1F1F</color>
+    <color name="white">#FFFFFF</color>
     <color name="gray1">#ACACAC</color>
     <color name="gray2">#F8F8F8</color>
     <color name="gray3">#575757</color>
@@ -9,4 +9,6 @@
     <color name="sub_color1">#CCE0D2</color>
     <color name="sub_color2">#F0F4F1</color>
     <color name="sub_color3">#EA4335</color>
+    <color name="sub_color4">#FDECEB</color>
+    <color name="sub_color5">#EABCBA</color>
 </resources>

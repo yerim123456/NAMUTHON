@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_feature1"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="feature1" />
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/selector_bottom_navigation_home"
+        android:title="@string/bottom_navigation_home"
+        android:checked="true"
+        android:iconTint="@drawable/selector_bottom_navigation_text"/>
     <item
-        android:id="@+id/navigation_feature2"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="feature2" />
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/selector_bottom_navigation_report"
+        android:iconTint="@drawable/selector_bottom_navigation_text"
+        android:title="@string/bottom_navigation_report" />
+    <item
+        android:id="@+id/navigation_camera"
+        android:icon="@drawable/selector_bottom_navigation_camera"
+        android:iconTint="@drawable/selector_bottom_navigation_text"
+        android:title="@string/bottom_navigation_camera" />
+    <item
+        android:id="@+id/navigation_all"
+        android:icon="@drawable/selector_bottom_navigation_all"
+        android:iconTint="@drawable/selector_bottom_navigation_text"
+        android:title="@string/bottom_navigation_all"
+        />
 </menu>
