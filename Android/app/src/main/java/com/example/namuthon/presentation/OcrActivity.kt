@@ -19,7 +19,13 @@ import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingActivity
 import com.example.namuthon.databinding.ActivityOcrBinding
 import com.example.namuthon.presentation.ocr.CameraDialog
+import com.googlecode.tesseract.android.TessBaseAPI
+import java.io.File
+import java.io.FileNotFoundException
 import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 
 
@@ -35,6 +41,15 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     val CAMERA_CODE = 98
     val STORAGE_CODE = 99
 
+    //사용되는 이미지
+    var image : Bitmap? = null
+
+    //Tess API reference
+    private var mTess : TessBaseAPI? = null
+
+    //언어데이터가 있는 경로
+    var datapath = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,6 +60,12 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
         // 카메라
         binding.btnCamera.setOnClickListener{
             addDialog(it.context) // 다이얼로그 띄우기
+        }
+
+        // 텍스트 추출
+        binding.btnOcr.setOnClickListener {
+            ocrSetting()   // ocr 세팅
+            processImage() // image 글자 인식
         }
     }
 
@@ -172,8 +193,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                         val img = data?.extras?.get("data") as Bitmap
                         val uri = saveFile(RandomFileName(), "image/jpeg", img)
                         binding.imgCamera.setImageURI(uri)
-                    }
 
+                        image = img //ocr에 img 전달
+                    }
                 }
                 STORAGE_CODE -> {
                     val uri = data?.data
@@ -187,5 +209,68 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     fun RandomFileName() : String{
         val fileName = SimpleDateFormat("yyyyMMddHHmmss").format(System.currentTimeMillis())
         return fileName
+    }
+
+    //OCR 세팅
+    fun ocrSetting(){
+        //언어파일 경로
+        datapath = "$filesDir/tesseract/"
+
+        //트레이닝데이터가 카피되어 있는지 체크
+        checkFile(File(datapath + "tessdata/"))
+
+        //Tesseract API 언어 세팅
+        val lang = "kor"
+
+        //OCR 세팅
+        mTess = TessBaseAPI()
+        mTess!!.init(datapath, lang)
+    }
+
+    // 이미지에서 텍스트 읽기
+    fun processImage() {
+        var OCRresult: String? = null
+        mTess!!.setImage(image)
+        OCRresult = mTess!!.utF8Text
+        binding.tvOcr!!.text = OCRresult
+    }
+
+    // 언어 데이터 파일, 디바이스에 복사
+    private val langFileName = "kor.traineddata" // 언어 파일 이름
+    private fun copyFiles() {
+        try {
+            val filepath = datapath + "tessdata/" + langFileName
+            val assetManager = assets
+            val instream: InputStream = assetManager.open(langFileName)
+            val outstream: OutputStream = FileOutputStream(filepath)
+            val buffer = ByteArray(1024)
+            var read: Int
+            while (instream.read(buffer).also { read = it } != -1) {
+                outstream.write(buffer, 0, read)
+            }
+            outstream.flush()
+            outstream.close()
+            instream.close()
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    //디바이스에 언어 데이터 파일 존재 유무 체크
+    private fun checkFile(dir: File) {
+        //디렉토리가 없으면 디렉토리를 만들고 그후에 파일을 카피
+        if (!dir.exists() && dir.mkdirs()) {
+            copyFiles()
+        }
+        //디렉토리가 있지만 파일이 없으면 파일카피 진행
+        if (dir.exists()) {
+            val datafilepath = datapath + "tessdata/" + langFileName
+            val datafile = File(datafilepath)
+            if (!datafile.exists()) {
+                copyFiles()
+            }
+        }
     }
 }
