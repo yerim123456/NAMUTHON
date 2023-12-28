@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/sub_color4">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/ab_report_done_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.Toolbar"
+                app:elevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb_report_done_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="left"
+                    android:background="?attr/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_report_back_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/report_main_title"
+                        android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                android:id="@+id/tv_report_done_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/report_done_adress"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ab_report_done_appbar" />
+
+            <TextView
+                android:id="@+id/tv_report_done_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_report_choose_button_2"
+                android:paddingHorizontal="11dp"
+                android:text="@string/report_done_done"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_report_done_title"
+                app:layout_constraintEnd_toStartOf="@id/tv_report_done_case" />
+
+            <TextView
+                android:id="@+id/tv_report_done_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_report_choose_button_2"
+                android:paddingHorizontal="11dp"
+                android:text="@string/report_done_case"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_report_done_title"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_report_done_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_report_check_box_3"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="@string/report_done_case"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:textColor="@color/gray3"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_title" />
+
+
+            <TextView
+                android:id="@+id/tv_report_done_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/report_done_rate"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_address" />
+
+            <TextView
+                android:id="@+id/tv_report_done_rate"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_report_check_box_3"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="@string/report_done_real_money"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:textColor="@color/gray3"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_title2" />
+
+            <TextView
+                android:id="@+id/tv_report_done_rate_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/shape_report_check_box_3"
+                android:layout_marginTop="30dp"
+                android:text="@string/report_done_real_money2"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:textColor="@color/gray3"
+                android:textSize="15sp"
+                android:layout_marginStart="120dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_report_done_rate" />
+
+            <ImageView
+                android:id="@+id/iv_report_done_result"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_report_done_low"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_report_done_rate"
+                app:layout_constraintEnd_toEndOf="@+id/tv_report_done_rate"
+                app:layout_constraintStart_toStartOf="@+id/tv_report_done_rate"
+                app:layout_constraintTop_toTopOf="@+id/tv_report_done_rate" />
+
+
+            <TextView
+                android:id="@+id/tv_report_done_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/report_done_report"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_rate" />
+
+            <View
+                android:id="@+id/view_report_done_short"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/shape_report_check_box_4"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_report_done_short_version2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_report_done_short_version1" />
+
+            <TextView
+                android:id="@+id/tv_report_done_short_version1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="26dp"
+                android:paddingTop="15dp"
+                android:text="@string/report_done_report_short1"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textColor="@color/gray3"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/tv_report_done_title3"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_title3" />
+
+            <TextView
+                android:id="@+id/tv_report_done_short_version2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingBottom="15dp"
+                android:text="@string/report_done_report_short2"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textColor="@color/sub_color3"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/tv_report_done_title3"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_short_version1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_report_right_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/view_report_done_short"
+                app:layout_constraintEnd_toEndOf="@id/view_report_done_short"
+                app:layout_constraintTop_toTopOf="@id/view_report_done_short" />
+
+
+            <TextView
+                android:id="@+id/tv_report_done_title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/report_done_how"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_report_done_short" />
+
+            <TextView
+                android:id="@+id/tv_report_done_check_now"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/report_done_check_now"
+                android:background="@drawable/shape_report_check_box"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_title4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"/>
+            <ImageView
+                android:id="@+id/iv_report_done_check_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_report_right_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_report_done_check_now"
+                app:layout_constraintBottom_toBottomOf="@id/tv_report_done_check_now"
+                app:layout_constraintEnd_toEndOf="@id/tv_report_done_check_now"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_report_done_bill_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/report_done_bill_check"
+                android:background="@drawable/shape_report_check_box"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_check_now"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"/>
+            <ImageView
+                android:id="@+id/iv_report_done_bill_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_report_right_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_report_done_bill_check"
+                app:layout_constraintBottom_toBottomOf="@id/tv_report_done_bill_check"
+                app:layout_constraintEnd_toEndOf="@id/tv_report_done_bill_check"
+                android:layout_marginEnd="20dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_report_done_place_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/report_done_place_check"
+                android:background="@drawable/shape_report_check_box"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_bill_check"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"/>
+            <ImageView
+                android:id="@+id/iv_report_done_place_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_report_right_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_report_done_place_check"
+                app:layout_constraintBottom_toBottomOf="@id/tv_report_done_place_check"
+                app:layout_constraintEnd_toEndOf="@id/tv_report_done_place_check"
+                android:layout_marginEnd="20dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_report_done_insurance_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_report_check_box"
+                android:padding="10dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/report_done_insurance_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_report_done_place_check" />
+            <ImageView
+                android:id="@+id/iv_report_done_insurance_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_report_right_arrow"
+                app:layout_constraintTop_toTopOf="@id/tv_report_done_insurance_check"
+                app:layout_constraintBottom_toBottomOf="@id/tv_report_done_insurance_check"
+                app:layout_constraintEnd_toEndOf="@id/tv_report_done_insurance_check"
+                android:layout_marginEnd="20dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
