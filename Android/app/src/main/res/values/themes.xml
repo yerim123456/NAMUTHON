@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Namuthon" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/sub_color1</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/sub_color1</item>
+        <item name="colorSecondaryVariant">@color/sub_color2</item>
+        <item name="colorOnSecondary">@color/gray1</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.Namuthon" parent="Base.Theme.Namuthon" />
+    <style name="Theme.Toolbar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 </resources>
