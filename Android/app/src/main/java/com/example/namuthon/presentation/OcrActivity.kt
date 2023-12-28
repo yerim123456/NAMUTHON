@@ -3,6 +3,7 @@ package com.example.namuthon.presentation
 import android.Manifest
 import android.app.Activity
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -10,12 +11,14 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingActivity
 import com.example.namuthon.databinding.ActivityOcrBinding
+import com.example.namuthon.presentation.ocr.CameraDialog
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 
@@ -41,8 +44,28 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     override fun initView() {
         // 카메라
         binding.btnCamera.setOnClickListener{
-            CallCamera()
+            addDialog(it.context) // 다이얼로그 띄우기
         }
+    }
+
+    // 다이얼로그 띄우기
+    fun addDialog(context: Context) {
+        val dialog = CameraDialog(
+            context = context,
+            clickCamera = clickCamera,
+            clickGallery = clickGallery
+        )
+        dialog.showDialog()
+    }
+
+    // 카메라
+    private val clickCamera = View.OnClickListener {
+        CallCamera()
+    }
+
+    // 갤러리
+    private val clickGallery = View.OnClickListener {
+        GetAlbum()
     }
 
     // 카메라 권한, 저장소 권한
