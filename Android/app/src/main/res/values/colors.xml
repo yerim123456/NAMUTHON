@@ -9,6 +9,7 @@
     <color name="sub_color1">#CCE0D2</color>
     <color name="sub_color2">#F0F4F1</color>
     <color name="sub_color3">#EA4335</color>
+    <color name="dialog">#F5F3F2</color>
     <color name="sub_color4">#FDECEB</color>
     <color name="sub_color5">#EABCBA</color>
 </resources>
