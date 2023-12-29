@@ -18,7 +18,7 @@ abstract class BindingActivity<T : ViewDataBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = DataBindingUtil.setContentView(this, layoutRes)
         binding.lifecycleOwner = this
         initView()
@@ -26,8 +26,4 @@ abstract class BindingActivity<T : ViewDataBinding>(
 
     protected abstract fun initView()
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        hideKeyboard(currentFocus ?: View(this))
-        return super.dispatchTouchEvent(ev)
-    }
 }
