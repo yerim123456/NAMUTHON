@@ -26,10 +26,10 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="85dp"
             android:background="@color/white"
             android:paddingBottom="10dp"
-            app:itemIconSize="35dp"
+            app:itemIconSize="30dp"
             app:itemBackground="@color/white"
             app:itemActiveIndicatorStyle="@null"
             app:itemRippleColor="@null"

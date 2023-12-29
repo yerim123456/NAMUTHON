@@ -4,9 +4,14 @@ import android.os.Bundle
 import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingFragment
 import com.example.namuthon.databinding.FragmentReport04Binding
+import com.example.namuthon.presentation.MainActivity
 
 class FragmentReport04 :
-    BindingFragment<FragmentReport04Binding>(R.layout.fragment_report04) {
+    BindingFragment<FragmentReport04Binding>(R.layout.fragment_report04) , MainActivity.onBackPressedListener{
+
+    override fun onBackPressed() {
+        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+    }
     override fun initView() {
         val charter = arguments?.getString("charter")
         val money_charter = arguments?.getString("money_charter")
@@ -28,6 +33,7 @@ class FragmentReport04 :
                     }
                 }
             ).commit()
+
         }
 
     }

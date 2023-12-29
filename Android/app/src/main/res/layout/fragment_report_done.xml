@@ -33,6 +33,7 @@
                     android:background="?attr/colorPrimary">
 
                     <ImageView
+                        android:id="@+id/report_done_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_report_back_arrow" />
