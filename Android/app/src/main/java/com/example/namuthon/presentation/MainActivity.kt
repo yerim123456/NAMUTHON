@@ -26,5 +26,18 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
             }
         }
     }
+    interface onBackPressedListener {
+        fun onBackPressed()
+    }
+
+    override fun onBackPressed(){
+        val fragmentList = supportFragmentManager.fragments
+        for (fragment in fragmentList) {
+            if (fragment is onBackPressedListener) {
+                (fragment as onBackPressedListener).onBackPressed()
+                return
+            }
+        }
+    }
 
 }

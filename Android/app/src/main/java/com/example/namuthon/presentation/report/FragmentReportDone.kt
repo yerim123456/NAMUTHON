@@ -6,9 +6,13 @@ import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingFragment
 import com.example.namuthon.databinding.FragmentReportDoneBinding
 import com.example.namuthon.databinding.FragmentReportProcessBinding
+import com.example.namuthon.presentation.MainActivity
 
 class FragmentReportDone :
-    BindingFragment<FragmentReportDoneBinding>(R.layout.fragment_report_done) {
+    BindingFragment<FragmentReportDoneBinding>(R.layout.fragment_report_done) , MainActivity.onBackPressedListener{
+
+    override fun onBackPressed() {
+    }
     override fun initView() {
         val charter = arguments?.getString("charter")
         val money_charter = arguments?.getString("money_charter")
@@ -47,5 +51,9 @@ class FragmentReportDone :
 
         }
 
+        binding.reportDoneBack.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+
+        }
     }
 }
