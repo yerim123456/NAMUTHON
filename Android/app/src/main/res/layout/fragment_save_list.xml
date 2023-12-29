@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/ab_home_save_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.Toolbar"
+                app:elevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb_home_save_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="left"
+                    android:background="?attr/colorPrimary">
+
+                    <ImageView
+                        android:id="@+id/iv_home_save_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_report_back_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/home_save_main_title"
+                        android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                android:id="@+id/tv_home_save_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="27dp"
+                android:text="@string/home_user_name"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textColor="@color/main_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ab_home_save_appbar" />
+
+            <TextView
+                android:id="@+id/tv_home_save_name_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_user_name_sub2"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_home_save_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_save_name" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_home_save_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_save_name_sub">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/components_home_save_3" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/components_home_save_2" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_save_bluffing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/component_home_save_1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/tv_home_save_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/home_user_name"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textColor="@color/main_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+            <TextView
+                android:id="@+id/tv_home_save_name_sub2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_user_name_sub3"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_home_save_name2"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_save_name2" />
+
+
+            <TextView
+                android:id="@+id/tv_home_info_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/home_save_description"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_save_name_sub2" />
+
+
+            <TextView
+                android:id="@+id/tv_home_save_list1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                android:background="@drawable/shape_report_choose_button"
+                android:text="@string/home_save_list1"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_info_description" />
+
+
+            <TextView
+                android:id="@+id/tv_home_save_list2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                android:background="@drawable/shape_report_choose_button"
+                android:text="@string/home_save_list2"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_save_list1" />
+
+
+            <TextView
+                android:id="@+id/tv_home_save_list3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                android:background="@drawable/shape_report_choose_button"
+                android:text="@string/home_save_list3"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_save_list2" />
+
+            <TextView
+                android:id="@+id/tv_home_save_list4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                android:background="@drawable/shape_report_choose_button"
+                android:text="@string/home_save_list4"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_save_list3" />
+
+            <TextView
+                android:id="@+id/tv_home_save_list5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:textAppearance="@style/TextAppearance.Namuthon.Title"
+                android:textSize="15sp"
+                android:background="@drawable/shape_report_choose_button"
+                android:text="@string/home_save_list5"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_save_list4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
