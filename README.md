@@ -47,6 +47,8 @@ https://github.com/yerim123456/NAMUTHON/assets/97941141/61efc4ca-c6dc-4421-b854-
 
 
 ## OCR
+https://github.com/yerim123456/NAMUTHON/assets/97941141/0afc9210-472f-4297-bb9b-7bc52a398878
+
 
 
 
