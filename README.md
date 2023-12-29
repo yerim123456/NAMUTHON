@@ -1,4 +1,4 @@
-![image](https://github.com/yerim123456/NAMUTHON/assets/97941141/9e4b9d6b-c366-4b7d-9d86-ab0d09b61ffc)# NAMUTHON
+# NAMUTHON
 2023_NAMUTHON_왕꿈트리
 
 # 문제
@@ -36,6 +36,7 @@
 
 # ALL
 - 모든 정보를 모아서 볼 수 있는 곳
+
 ![image](https://github.com/yerim123456/NAMUTHON/assets/97941141/af4846ad-585c-457e-89dd-3c5142813017)
 
 
