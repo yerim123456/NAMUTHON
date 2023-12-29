@@ -6,7 +6,7 @@ import androidx.navigation.findNavController
 import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingFragment
 import com.example.namuthon.databinding.FragmentHomeBinding
-import com.example.namuthon.presentation.OcrActivity
+import com.example.namuthon.presentation.ocr.OcrActivity
 import com.example.namuthon.presentation.report.FragmentReport01
 
 class FragmentHome : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {

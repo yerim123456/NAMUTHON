@@ -7,11 +7,8 @@ import com.example.namuthon.databinding.FragmentReport0301Binding
 import com.example.namuthon.presentation.MainActivity
 
 class FragmentReport03_01 :
-    BindingFragment<FragmentReport0301Binding>(R.layout.fragment_report03_01) , MainActivity.onBackPressedListener{
+    BindingFragment<FragmentReport0301Binding>(R.layout.fragment_report03_01){
 
-    override fun onBackPressed() {
-        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
-    }
 
     override fun initView() {
         val charter = arguments?.getString("charter")

@@ -7,11 +7,8 @@ import com.example.namuthon.coreui.base.BindingFragment
 import com.example.namuthon.databinding.FragmentReport01Binding
 import com.example.namuthon.presentation.MainActivity
 
-class FragmentReport01 : BindingFragment<FragmentReport01Binding>(R.layout.fragment_report01) , MainActivity.onBackPressedListener{
+class FragmentReport01 : BindingFragment<FragmentReport01Binding>(R.layout.fragment_report01) {
 
-    override fun onBackPressed() {
-        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
-    }
 
     override fun initView() {
         binding.rgReport01Charter.setOnCheckedChangeListener { radioGroup, i ->

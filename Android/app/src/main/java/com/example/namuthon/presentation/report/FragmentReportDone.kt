@@ -9,10 +9,8 @@ import com.example.namuthon.databinding.FragmentReportProcessBinding
 import com.example.namuthon.presentation.MainActivity
 
 class FragmentReportDone :
-    BindingFragment<FragmentReportDoneBinding>(R.layout.fragment_report_done) , MainActivity.onBackPressedListener{
+    BindingFragment<FragmentReportDoneBinding>(R.layout.fragment_report_done){
 
-    override fun onBackPressed() {
-    }
     override fun initView() {
         val charter = arguments?.getString("charter")
         val money_charter = arguments?.getString("money_charter")

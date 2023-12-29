@@ -8,12 +8,37 @@
         android:id="@+id/navigation_home"
         android:name="com.example.namuthon.presentation.home.FragmentHome"
         android:label="home" />
+
+    <fragment
+        android:id="@+id/navigation_report01"
+        android:name="com.example.namuthon.presentation.report.FragmentReport01"
+        android:label="report01" />
+    <fragment
+        android:id="@+id/navigation_report02"
+        android:name="com.example.namuthon.presentation.report.FragmentReport02"
+        android:label="report02" />
+    <fragment
+        android:id="@+id/navigation_report03_01"
+        android:name="com.example.namuthon.presentation.report.FragmentReport03_01"
+        android:label="report03_01" />
+    <fragment
+        android:id="@+id/navigation_report04"
+        android:name="com.example.namuthon.presentation.report.FragmentReport04"
+        android:label="report04" />
+    <fragment
+        android:id="@+id/navigation_report_process"
+        android:name="com.example.namuthon.presentation.report.FragmentReportProcess"
+        android:label="report_process" />
+    <fragment
+        android:id="@+id/navigation_report_done"
+        android:name="com.example.namuthon.presentation.report.FragmentReportDone"
+        android:label="report_done" />
     <fragment
         android:id="@+id/navigation_report"
         android:name="com.example.namuthon.presentation.report.FragmentReport01"
         android:label="report" />
     <activity
         android:id="@+id/navigation_camera"
-        android:name="com.example.namuthon.presentation.OcrActivity"
+        android:name="com.example.namuthon.presentation.ocr.OcrActivity"
         android:label="camera"/>
 </navigation>
