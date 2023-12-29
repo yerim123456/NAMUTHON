@@ -1,4 +1,4 @@
-package com.example.namuthon.presentation
+package com.example.namuthon.presentation.ocr
 
 import android.Manifest
 import android.app.Activity
@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat
 import com.example.namuthon.R
 import com.example.namuthon.coreui.base.BindingActivity
 import com.example.namuthon.databinding.ActivityOcrBinding
-import com.example.namuthon.presentation.ocr.CameraDialog
 import com.googlecode.tesseract.android.TessBaseAPI
 import java.io.File
 import java.io.FileNotFoundException
@@ -50,6 +49,8 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
     //언어데이터가 있는 경로
     var datapath = ""
 
+    var ocrResult: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,10 +63,18 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
             addDialog(it.context) // 다이얼로그 띄우기
         }
 
-        // 텍스트 추출
-        binding.btnOcr.setOnClickListener {
-            ocrSetting()   // ocr 세팅
-            processImage() // image 글자 인식
+        // 다음으로
+        binding.btnNext.setOnClickListener {
+            // 키워드 검색 화면으로 이동
+            val intent = Intent(this, SearchActivity::class.java)
+            // 데이터 전달
+            intent.putExtra("ocrResult", ocrResult)
+            startActivity(intent)
+        }
+
+        // 뒤로가기
+        binding.btnBack.setOnClickListener {
+            finish()
         }
     }
 
@@ -195,6 +204,10 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
                         binding.imgCamera.setImageURI(uri)
 
                         image = img //ocr에 img 전달
+
+                        // 텍스트 추출
+                        ocrSetting()   // ocr 세팅
+                        processImage() // image 글자 인식
                     }
                 }
                 STORAGE_CODE -> {
@@ -229,10 +242,9 @@ class OcrActivity : BindingActivity<ActivityOcrBinding>(R.layout.activity_ocr) {
 
     // 이미지에서 텍스트 읽기
     fun processImage() {
-        var OCRresult: String? = null
         mTess!!.setImage(image)
-        OCRresult = mTess!!.utF8Text
-        binding.tvOcr!!.text = OCRresult
+        ocrResult = mTess!!.utF8Text
+        binding.tvOcr!!.text = ocrResult
     }
 
     // 언어 데이터 파일, 디바이스에 복사

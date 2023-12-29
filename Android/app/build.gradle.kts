@@ -88,4 +88,7 @@ dependencies {
 
     // Tesseract OCR 사용
     implementation("com.rmtheis:tess-two:9.1.0")
+
+    // SlidingUpPanel
+    implementation ("com.sothree.slidinguppanel:library:3.4.0")
 }

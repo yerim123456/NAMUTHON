@@ -4,9 +4,20 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--ocr-->
+    <string name="ocr_tv_title">계약서 분석</string>
     <string name="ocr_btn_camera">사진 찍기</string>
     <string name="ocr_btn_ocr">텍스트 추출</string>
     <string name="ocr_tv_ocr">결과 출력</string>
+
+    <string name="ocr_btn_next">다음으로</string>
+    <string name="ocr_keyword_title">계약 안전도 등급</string>
+    <string name="ocr_report">간단 리포트</string>
+    <string name="ocr_keyword">keyword</string>
+    <string name="ocr_keyword_check">해당 키워드를 꼼꼼하게 확인하세요 👀</string>
+    <string name="ocr_check_content">주택임대차표준계약서에\n요구되는 내용 중 5가지가 빠져있어요!</string>
+    <string name="ocr_check_more">법의 보호를 받기 위한 중요 사항을 정리하였습니다.\n계약 체결 전에 꼭 확인하세요.</string>
+    <string name="ocr_tv_more">내용 보기 ></string>
+
     <string name="report_main_title">전세사기 리포트</string>
     <string name="report01_title">1. 보증금 유형을 선택해주세요</string>
     <string name="report01_charter_all">전세</string>
@@ -49,4 +60,5 @@
     <string name="report_done_bill_check">임대인의 체납 세금 확인 하러가기</string>
     <string name="report_done_place_check">공인중개사 사무소 확인 하러가기</string>
     <string name="report_done_insurance_check">전세보증보험 가입</string>
+
 </resources>
